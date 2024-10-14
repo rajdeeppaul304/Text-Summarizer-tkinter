@@ -5,8 +5,13 @@ import google.generativeai as genai
 import threading
 import tkinter.font as tkFont
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
+from dotenv import load_dotenv
+import os
 
-API_KEY = "AIzaSyDbCxNdRAnwnk7hFnJarnURPW7hxrrVkDA"  # Replace with your actual API key
+load_dotenv()  # Load environment variables from .env file
+
+API_KEY = os.getenv("API_KEY")
+
 
 # Configure the API key
 genai.configure(api_key=API_KEY)
